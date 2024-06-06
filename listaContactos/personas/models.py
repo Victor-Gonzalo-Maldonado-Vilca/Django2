@@ -9,4 +9,4 @@ class Persona(models.Model):
     email     = models.CharField(max_length = 100)
     donador   = models.BooleanField(default=True)
     dni       = models.CharField(max_length = 8, null=True)
-    telefono  = models.CharField(max_length = 9, default="---------")
+    telefono  = models.CharField(max_length = 9, null=True)
