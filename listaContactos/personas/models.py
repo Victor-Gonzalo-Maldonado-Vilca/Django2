@@ -8,3 +8,4 @@ class Persona(models.Model):
     edad      = models.IntegerField()
     email     = models.CharField(max_length = 100)
     donador   = models.BooleanField(default=False)
+    dni       = models.CharField(max_length = 8, default="--------")
