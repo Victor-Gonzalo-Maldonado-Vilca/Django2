@@ -6,3 +6,4 @@ class Persona(models.Model):
     nombre    = models.charField(max_length = 100)
     apellidos = models.charField(max_length = 100)
     edad      = models.IntegerField(max_digits = 3)
+    email     = models.charField(max_length = 100)
