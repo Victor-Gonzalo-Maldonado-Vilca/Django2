@@ -15,10 +15,10 @@
     <ul>
       {% for myItem in myList %}
         <li>{{forloop.counter}} - {{ myItem }}
-        {% if myItem == 33%}
+        {% if myItem <= 44 %}
           - Este numero es magico
-        {% elif myItem > 50 %}
-          - Este numero es mayor que 50
+        {% elif myItem >= 44 %}
+          - Este numero es mayor que 44
         {% endif %}
         </li>
       {% endfor %}
