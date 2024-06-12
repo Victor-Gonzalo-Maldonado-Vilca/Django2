@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Template Base</title>
+  </head>
+  <body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <h2>Hola Mundo desde Django</h2>
+    <h3>Con Templates</h3>
+    <p>
+      {{ myText }},
+      {{ myNumber }}
+    </p>
+    <ul>
+      {% for myItem in myList %}
+        <li>{{forloop.counter0}} - {{ myItem }}</li>
+      {% endfor %}
+    </ul>
+    {% endblock %}
+  </body>
+</html>
