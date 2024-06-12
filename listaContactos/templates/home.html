@@ -14,7 +14,7 @@
     </p>
     <ul>
       {% for myItem in myList %}
-        <li>{{forloop.last}} - {{ myItem }}</li>
+        <li>{{forloop.parentloop}} - {{ myItem }}</li>
       {% endfor %}
     </ul>
     {% endblock %}
