@@ -9,16 +9,18 @@
     <h2>Hola Mundo desde Django</h2>
     <h3>Con Templates</h3>
     <p>
-      {{ myText }},
+      {{ myText|upper|truncatechars:"16" }},
       {{ myNumber }}
     </p>
     <ul>
       {% for myItem in myList %}
-        <li>{{forloop.counter}} - {{ myItem }}
-        {% if myItem <= 44 %}
+        <li>{{forloop.counter}} - {{ myItem|add:2 }}
+        {% if myItem == 33 %}
           - Este numero es magico
-        {% elif myItem >= 44 %}
-          - Este numero es mayor que 44
+        {% elif myItem|divisibleby:2 %}
+          - Este numero es par
+        {% elif myItem > 50 %}
+          - Este numero es mayor que 50
         {% endif %}
         </li>
       {% endfor %}
