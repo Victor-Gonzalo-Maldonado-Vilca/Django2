@@ -22,8 +22,3 @@ def personaCreateView(request):
     }
     
     return render(request, 'personas/personasCreate.html', context)
-    
-def searchForHelp(request):
-    print('GET: ', request.GET)
-    print('POST: ', request.POST)
-    return render(request, 'personas/search.html', {})
