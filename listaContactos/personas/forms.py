@@ -10,7 +10,6 @@ class PersonaForm(forms.ModelForm):
             'apellidos',
             'edad',
             'email',
-            'donador',
             'dni',
             'telefono',
         ]

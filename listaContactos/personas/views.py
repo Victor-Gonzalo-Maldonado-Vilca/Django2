@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Persona
+from .forms import PersonaForm
 
 # Create your views here.
 
