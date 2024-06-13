@@ -17,11 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from inicio.views import myHomeView, anotherView
-from personas.views import personaTestView
+from personas.views import personaTestView, personaCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', myHomeView, name='Página de Inicio'),
     path('another/', anotherView, name='otro'),
-    path('persona/', personaTestView, name='otro'),
+    path('persona/', personaTestView, name='testViewPersona'),
+    path('agregar/', personaCreateView, name='createPersona')
 ]
