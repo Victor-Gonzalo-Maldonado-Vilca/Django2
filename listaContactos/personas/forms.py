@@ -10,6 +10,7 @@ class PersonaForm(forms.ModelForm):
             'apellidos',
             'edad',
             'email',
+            # no se encuentra el campo donador
             'dni',
             'telefono',
         ]
