@@ -214,10 +214,10 @@
 		
 	\section{Equipos, materiales y temas utilizados}
     \begin{itemize}
-      \item \textbf{Sintaxis de plantillas en Django}.
-      \item \textbf{Herencia de plantillas y bloques}.
-      \item \textbf{Contexto de plantillas y vistas en Django}.
-      \item \textbf{Uso avanzado de plantillas}.
+      \item Sintaxis de plantillas en Django.
+      \item Herencia de plantillas y bloques.
+      \item Contexto de plantillas y vistas en Django.
+      \item Uso avanzado de plantillas.
     \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%
@@ -560,14 +560,14 @@
         <head>
           <meta charset="UTF-8"/>
           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-          <title>Create Persona</title>
+          <title>search</title>
         </head>
         <body>
           {% extends 'base.html' %}
           {% block content %}
-          <form method='POST'> {% csrf_token %}
-            {{ form.as_p }}
-            <input type='submit' value='Grabar'/>
+          <form action='' method='POST'> {% csrf_token %}
+            <input type='text' name='q' placeholder="buscar"/>
+            <input type='submit' value='Buscar'/>
           </form>
           {% endblock %}
         </body>
@@ -582,12 +582,12 @@
     \begin{figure}[H]
       \centering
       \includegraphics[width=1\textwidth, keepaspectratio]{img/post.png}
-      \caption{servidor}
+      \caption{servidor - POST}
     \end{figure}
     \begin{figure}[H]
       \centering
       \includegraphics[width=1\textwidth, keepaspectratio]{img/get.png}
-      \caption{servidor}
+      \caption{servidor - GET}
     \end{figure}
   
 %%%%%%%%%%%%
@@ -600,12 +600,61 @@
     python manage.py runserver
   \end{lstlisting}
   
+%%%%%%%%%%%%
+
+  \subsection{Uso de GitHub}
+  
+%%%%%%
+
+  \subsubsection{Usuario}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth, keepaspectratio]{img/usuario.png}
+    \caption{Usuario}
+  \end{figure}
+  
+%%%%%%
+
+  \subsubsection{Registro de cambios en mi código}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth, keepaspectratio]{img/commit.png}
+    \caption{Commits}
+  \end{figure}
+  
+%%%%%%
+
+  \subsubsection{Uso de Ramas}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth, keepaspectratio]{img/ramas.png}
+    \caption{Ramas}
+  \end{figure}
+  
+%%%%%%
+
+  \subsubsection{Repositorio}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth, keepaspectratio]{img/repositorio.png}
+    \caption{Repositorio}
+  \end{figure}
+  
+%%%%%%
+
+  \subsubsection{Proyecto compartido con el profesor de github}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth, keepaspectratio]{img/compartir.png}
+    \caption{Compartir con el Docente}
+  \end{figure}
+  
 %%%%%%%%%%%%%%%%%%%%
 
   \section{Recomensaciones}
   \begin{itemize}
     \item Asegurarse siempre de incluir todos los campos requeridos en los formularios de Django para evitar errores de validación. 
-    Utilizar valores por defecto de manera cuidadosa y coherente, especialmente en campos booleanos u otros tipos de datos sensibles.
+    \item Utilizar valores por defecto de manera cuidadosa y coherente, especialmente en campos booleanos u otros tipos de datos sensibles.
   \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%
