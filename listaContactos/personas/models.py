@@ -1,5 +1,4 @@
 from django.db import models
-from django import forms
 
 # Create your models here.
 
@@ -11,9 +10,3 @@ class Persona(models.Model):
     donador   = models.BooleanField(default=False)
     dni       = models.CharField(max_length = 8, null=True)
     telefono  = models.CharField(max_length = 9, null=True)
-    
-class RawPersonaForm(forms.Form):
-    nombres   = forms.CharField()
-    apellidos = forms.CharField()
-    edad      = forms.IntegerField()
-    donador   = forms.BooleanField()
