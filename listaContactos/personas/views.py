@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Persona
 from .forms import PersonaForm, RawPersonaForm
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 def personasAnotherCreateView(request):
@@ -60,3 +61,13 @@ def personasListView(request):
         'objectList': queryset,
     }
     return render(request, 'personas/personasLista.html', context)
+    
+def personasDeleteView(request, myID):
+    obj = get_object_or_404(Persona, id = myID)
+    if request.method == 'POST':
+        print("lo borro")
+        obj.delete()
+    context = {
+        'objeto': obj,
+    }
+    return render(request, 'personas/personasBorrar.html', context)

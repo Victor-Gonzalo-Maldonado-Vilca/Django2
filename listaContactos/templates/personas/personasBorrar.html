@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>test</title>
+  </head>
+  <body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <form method='POST'> {% csrf_token %}
+      <h1>Quiere borrar a esta persona: </h1>
+      <h2>{{objeto.nombre}}</h2>
+      <input type='submit' value='Si'/>
+      <a href='../'>Cancelar</a>
+    </form>
+    {% endblock %}
+  </body>
+</html>
