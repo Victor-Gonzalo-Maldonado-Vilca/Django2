@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
@@ -12,4 +13,4 @@ class Persona(models.Model):
     telefono  = models.CharField(max_length = 9, null=True)
     
     def get_absolute_url(self):
-        return "/personas/" + str(self.id) + "/"
+        return reverse('personas:browsing', kwargs={'myID': self.id})
