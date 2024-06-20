@@ -14,7 +14,14 @@ class PersonaForm(forms.ModelForm):
             'dni',
             'telefono',
         ]
-        
+    def clean_nombres(self, *args, **kwargs):
+        print('paso')
+        name = self.cleaned_data.get('nombre')
+        if name.istitle():
+            return name
+        else:
+            raise forms.ValidationError('La primera letra en Mayuscula')
+            
 class RawPersonaForm(forms.Form):
     nombres   = forms.CharField(
         widget = forms.Textarea(
