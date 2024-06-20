@@ -46,3 +46,10 @@ def searchForHelp(request):
         print(nombre)
     context = {}
     return render(request, 'personas/search.html', context)
+    
+def personasShowObject(request, myID):
+    obj = Persona.objects.get(id = myID)
+    context = {
+        'objeto': obj,
+    }
+    return render(request, 'personas/description.html', context)
