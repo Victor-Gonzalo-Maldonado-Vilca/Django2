@@ -48,7 +48,7 @@ def searchForHelp(request):
     return render(request, 'personas/search.html', context)
     
 def personasShowObject(request, myID):
-    obj = Persona.objects.get(id = myID)
+    obj = get_object_or_404(Persona, id = myID)
     context = {
         'objeto': obj,
     }
