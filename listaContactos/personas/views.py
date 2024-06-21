@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import (
     ListView,
     DetailView,
     CreateView,
     UpdateView,
+    DeleteView,
     )
 from .models import Persona
 from .forms import PersonaForm, RawPersonaForm
@@ -34,6 +36,10 @@ class PersonaUpdateView(UpdateView):
         'edad',
         'donador',
     ]
+    
+class PersonaDeleteView(DeleteView):
+    model = Persona
+    success_url = reverse_lazy('personas:persona-list')
 
 def personasAnotherCreateView(request):
     form = RawPersonaForm()
