@@ -13,4 +13,4 @@ class Persona(models.Model):
     telefono  = models.CharField(max_length = 9, null=True)
     
     def get_absolute_url(self):
-        return reverse('personas:persona-list')
+        return reverse('personas:persona-detail', kwargs = {'pk': self.id})
