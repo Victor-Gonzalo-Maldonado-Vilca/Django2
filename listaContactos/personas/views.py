@@ -1,17 +1,22 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.http import HttpResponse
 from django.views.generic import (
     ListView,
     DetailView,
     CreateView,
     UpdateView,
     DeleteView,
+    View,
     )
 from .models import Persona
 from .forms import PersonaForm, RawPersonaForm
 from django.shortcuts import get_object_or_404
 
 # Create your views here.
+class PersonaQueryView(View):
+    def get(self, request, *args, **kwargs):
+        return HttpResponse('Hola mundo con Clases')
 class PersonaDetailView(DetailView):
     model = Persona
     
