@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.http import HttpResponse
+from django.http import JsonResponse
 from django.views.generic import (
     ListView,
     DetailView,
@@ -16,7 +16,9 @@ from django.shortcuts import get_object_or_404
 # Create your views here.
 class PersonaQueryView(View):
     def get(self, request, *args, **kwargs):
-        return HttpResponse('Hola mundo con Clases')
+        queryset = Persona.objects.filter(edad__lte='40')
+        return JsonResponse(list(queryset.values()), safe = False) 
+        
 class PersonaDetailView(DetailView):
     model = Persona
     
