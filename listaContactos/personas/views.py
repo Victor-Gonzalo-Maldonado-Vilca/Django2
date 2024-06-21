@@ -1,9 +1,15 @@
 from django.shortcuts import render
+from django.views.generic.list import (
+    ListView,
+    )
 from .models import Persona
 from .forms import PersonaForm, RawPersonaForm
 from django.shortcuts import get_object_or_404
 
 # Create your views here.
+class PersonaListView(ListView):
+    model = Persona
+
 def personasAnotherCreateView(request):
     form = RawPersonaForm()
     if request.method == "POST":
