@@ -9,6 +9,7 @@ from django.shortcuts import get_object_or_404
 # Create your views here.
 class PersonaListView(ListView):
     model = Persona
+    queryset = Persona.objects.filter(edad__lte='10')
 
 def personasAnotherCreateView(request):
     form = RawPersonaForm()
