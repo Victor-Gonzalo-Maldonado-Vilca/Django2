@@ -3,6 +3,7 @@ from django.views.generic import (
     ListView,
     DetailView,
     CreateView,
+    UpdateView,
     )
 from .models import Persona
 from .forms import PersonaForm, RawPersonaForm
@@ -17,6 +18,15 @@ class PersonaListView(ListView):
     queryset = Persona.objects.filter(edad__lte='10')
     
 class PersonaCreateView(CreateView):
+    model = Persona
+    fields = [
+        'nombre',
+        'apellidos',
+        'edad',
+        'donador',
+    ]
+    
+class PersonaUpdateView(UpdateView):
     model = Persona
     fields = [
         'nombre',
