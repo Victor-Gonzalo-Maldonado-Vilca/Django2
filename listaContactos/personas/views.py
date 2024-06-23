@@ -24,7 +24,7 @@ class PersonaDetailView(DetailView):
     
 class PersonaListView(ListView):
     model = Persona
-    queryset = Persona.objects.filter(edad__lte='10')
+    queryset = Persona.objects.filter(edad__lte='40')
     
 class PersonaCreateView(CreateView):
     model = Persona
